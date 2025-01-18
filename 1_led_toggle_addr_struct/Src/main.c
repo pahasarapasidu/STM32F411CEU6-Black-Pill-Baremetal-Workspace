@@ -6,14 +6,14 @@
 //Pin: 13
 
 #define PERIPH_BASE			    (0x40000000UL)
-#define AHB1PERIPH_OFFSET	  (0x00020000UL)
-#define AHB1PERIPH_BASE		  (PERIPH_BASE + AHB1PERIPH_OFFSET)
+#define AHB1PERIPH_OFFSET	    (0x00020000UL)
+#define AHB1PERIPH_BASE		    (PERIPH_BASE + AHB1PERIPH_OFFSET)
 
 #define GPIOC_OFFSET		    (0x00000800UL)
 #define GPIOC_BASE			    (AHB1PERIPH_BASE + GPIOC_OFFSET)
 
 #define RCC_OFFSET			    (0x00003800UL)                      //resetting clock control(RCC)
-#define RCC_BASE			      (AHB1PERIPH_BASE + RCC_OFFSET) 
+#define RCC_BASE			    (AHB1PERIPH_BASE + RCC_OFFSET) 
 
 /* We don't need these bcz we make structure  ;)
 
@@ -28,7 +28,7 @@
 
 */
 
-#define GPIOCEN				      (1UL << 2) //0b 0000 0000 0000 0000 0000 0000 0000 0100
+#define GPIOCEN				   (1UL << 2) //0b 0000 0000 0000 0000 0000 0000 0000 0100
 
 #define PIN13               (1UL << 13)
 #define LED_PIN             PIN13
@@ -72,7 +72,7 @@ int main(void)
         /*4. Toggle PC13 (Toggle user LED)*/
         //GPIOC_OD_R ^= LED_PIN;
         GPIOC->ODR ^= LED_PIN;
-        for (int i = 0; i < 1000000; i++){} //delay
+        for (int i = 0; i < 100000; i++){} //delay
     }
     
 }
