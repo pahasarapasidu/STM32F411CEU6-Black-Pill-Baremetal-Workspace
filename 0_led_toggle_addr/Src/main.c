@@ -1,3 +1,6 @@
+/*STM32F411CEU6-WeAct Blackphill User LED Configuration
+  BareMetal Programming */
+
 //Where is the led connected?
 //Port: C
 //Pin: 13
@@ -32,11 +35,17 @@ int main(void)
     RCC_AHB1EN_R |= GPIOCEN;
     /*2. Set PC13 as output pin*/
     GPIOC_MODE_R |= (1UL << 26); // Set bit 26 to 1
-
+    GPIOC_MODE_R &=~(1UL << 27); // Set bit 27 to 0
     while (1)
     {
-        /*3. Set PC13 HIGH */
-        GPIOC_OD_R |= LED_PIN;
+        /*3. Set PC13 LOW(Turn on user LED for WeactStudio blackphill) */
+        //GPIOC_OD_R &= LED_PIN; (Uncomment this line to turn on the LED)
+
+        /*4. Toggle PC13 (Toggle user LED)*/
+        GPIOC_OD_R ^= LED_PIN;
+        for (int i = 0; i < 100000; i++){}
+
+        
     }
     
 }
