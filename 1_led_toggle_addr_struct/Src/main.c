@@ -72,7 +72,7 @@ int main(void)
         /*4. Toggle PC13 (Toggle user LED)*/
         //GPIOC_OD_R ^= LED_PIN;
         GPIOC->ODR ^= LED_PIN;
-        for (int i = 0; i < 1000000; i++){}
+        for (int i = 0; i < 1000000; i++){} //delay
     }
     
 }
