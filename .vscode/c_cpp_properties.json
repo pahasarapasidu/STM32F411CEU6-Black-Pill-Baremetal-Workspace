@@ -8,6 +8,7 @@
             "cppStandard": "gnu++17",
             "intelliSenseMode": "linux-gcc-x64",
             "includePath": [
+                "${workspaceFolder}/**",
                 "/home/last_knight/Documents/STM32-BareMetal_Workspace/chip_headers/CMSIS/Device/ST/STM32F4xx/Include",
                 "/home/last_knight/Documents/STM32-BareMetal_Workspace/chip_headers/CMSIS/Include"
             ]
