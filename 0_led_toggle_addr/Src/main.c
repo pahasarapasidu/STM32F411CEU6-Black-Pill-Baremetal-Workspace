@@ -23,5 +23,20 @@
 
 #define GPIOCEN				(1UL << 2) //0b 0000 0000 0000 0000 0000 0000 0000 0100
 
-#define PIN13               (1Ul << 13)
+#define PIN13               (1UL << 13)
 #define LED_PIN             PIN13
+
+int main(void)
+{
+    /*1. Enable clock access to GPIOC*/
+    RCC_AHB1EN_R |= GPIOCEN;
+    /*2. Set PC13 as output pin*/
+    GPIOC_MODE_R |= (1UL << 26); // Set bit 26 to 1
+
+    while (1)
+    {
+        /*3. Set PC13 HIGH */
+        GPIOC_OD_R |= LED_PIN;
+    }
+    
+}

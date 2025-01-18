@@ -2,3 +2,6 @@
 .settings
 .cproject
 .gitignore
+Debug
+Release
+0_led_toggle_addr CDT Build Console Log
