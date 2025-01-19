@@ -15,11 +15,11 @@ int main(void){
 
     while (1)
     {
-        GPIOC ->BSRR =~LED_PIN; // Set pin 13
+        GPIOC ->BSRR =LED_PIN; // Set pin 13
         for (int i = 0; i < 100000; i++); // Delay
         //GPIOC ->BSRR &=LED_PIN; // Set pin 13
 
-        GPIOC ->BSRR =~(1UL << 26); // Reset pin 13
+        GPIOC ->BSRR =(1UL << 29); // Reset pin 13
         for (int i = 0; i < 100000; i++); // Delay
         //GPIOC ->BSRR &=(1UL << 26); // Reset pin 13
     }

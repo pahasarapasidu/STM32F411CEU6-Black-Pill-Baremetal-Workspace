@@ -103,9 +103,9 @@ int main(void){
 
     while (1)
     {
-        GPIOC ->BSRR =~LED_PIN; // Set pin 13
+        GPIOC ->BSRR =LED_PIN; // Set pin 13
  80001f6:	4b0f      	ldr	r3, [pc, #60]	@ (8000234 <main+0x5c>)
- 80001f8:	f46f 5200 	mvn.w	r2, #8192	@ 0x2000
+ 80001f8:	f44f 5200 	mov.w	r2, #8192	@ 0x2000
  80001fc:	619a      	str	r2, [r3, #24]
         for (int i = 0; i < 100000; i++); // Delay
  80001fe:	2300      	movs	r3, #0
@@ -120,9 +120,9 @@ int main(void){
  8000210:	ddf8      	ble.n	8000204 <main+0x2c>
         //GPIOC ->BSRR &=LED_PIN; // Set pin 13
 
-        GPIOC ->BSRR =~(1UL << 26); // Reset pin 13
+        GPIOC ->BSRR =(1UL << 29); // Reset pin 13
  8000212:	4b08      	ldr	r3, [pc, #32]	@ (8000234 <main+0x5c>)
- 8000214:	f06f 6280 	mvn.w	r2, #67108864	@ 0x4000000
+ 8000214:	f04f 5200 	mov.w	r2, #536870912	@ 0x20000000
  8000218:	619a      	str	r2, [r3, #24]
         for (int i = 0; i < 100000; i++); // Delay
  800021a:	2300      	movs	r3, #0
@@ -135,7 +135,7 @@ int main(void){
  8000228:	4a03      	ldr	r2, [pc, #12]	@ (8000238 <main+0x60>)
  800022a:	4293      	cmp	r3, r2
  800022c:	ddf8      	ble.n	8000220 <main+0x48>
-        GPIOC ->BSRR =~LED_PIN; // Set pin 13
+        GPIOC ->BSRR =LED_PIN; // Set pin 13
  800022e:	e7e2      	b.n	80001f6 <main+0x1e>
  8000230:	40023800 	.word	0x40023800
  8000234:	40020800 	.word	0x40020800
