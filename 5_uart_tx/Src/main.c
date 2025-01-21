@@ -66,6 +66,7 @@ void uart6_tx_init(void)
 
 static void uart_set_baudrate(USART_TypeDef *USARTx, uint32_t PeriphClk, uint32_t Baudrate)
 {
+    /****Write Calculated Baudrate to any USARTx BRR****/
   USARTx->BRR = compute_uart_bd(PeriphClk, Baudrate);
 }
 
