@@ -10,6 +10,7 @@
 
 #define CR1_TE      (1UL << 3)
 #define CR1_UE      (1UL << 13) 
+#define SR_TXE      (1UL << 7)
 
 #define SYS_FREQ    16000000U
 #define APB2_CLK    SYS_FREQ
@@ -20,16 +21,16 @@ static void uart_set_baudrate(USART_TypeDef *USARTx, uint32_t PeriphClk, uint32_
 static uint16_t compute_uart_bd(uint32_t PeriphClk, uint32_t Baudrate);
 
 void uart6_tx_init(void);
+void usart6_write(int ch);
 
 int main(void){
 
-
+  uart6_tx_init();
 
 
     while (1)
     {
-
-        
+        usart6_write('S'); 
     }
     
 }
@@ -64,15 +65,32 @@ void uart6_tx_init(void)
 
 }
 
-static void uart_set_baudrate(USART_TypeDef *USARTx, uint32_t PeriphClk, uint32_t Baudrate)
+
+void usart6_write(int ch)
 {
-    /****Write Calculated Baudrate to any USARTx BRR****/
-  USARTx->BRR = compute_uart_bd(PeriphClk, Baudrate);
+    /*****Write Data to transmit*****/
+    
+  /*Make sure the transmit data register is empty*/
+  while(!(USART6 ->SR & SR_TXE)){}
+
+  /*Write to transmit data register*/ 
+  USART6 ->DR = (ch & 0xFF);
+
+
+
+
 }
 
-static uint16_t compute_uart_bd(uint32_t PeriphClk, uint32_t Baudrate)
+static void uart_set_baudrate(USART_TypeDef *USARTx, uint32_t PeriphClk, uint32_t BaudRate)
 {
-    /****USART Baudrate Rate  Calculation****/
-  return ((PeriphClk + (BaudRate/2U))/Baudrate);
+    /****Write Calculated Baudrate to any USARTx BRR****/
+  USARTx->BRR = compute_uart_bd(PeriphClk, BaudRate);
+}
+
+static uint16_t compute_uart_bd(uint32_t PeriphClk, uint32_t BaudRate)
+{
+    /****USART BaudRate devident factor(N) Calculation
+                      SYS_CLK/BR = N                  ****/
+  return ((PeriphClk + (BaudRate/2U))/BaudRate);
 
 }
