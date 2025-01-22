@@ -1,4 +1,4 @@
-/*STM32F411CEU6-WeAct Blackphill UART_TX Configuration   
+/*STM32F411CEU6-WeAct Blackpill UART_RXTX Configuration   
   BareMetal Programming with STM Header Files(https://github.com/STMicroelectronics/STM32CubeF4)
  */
 
@@ -6,7 +6,7 @@
 #include <stdint.h> //Include the standard integer header file
 #include "stm32f4xx.h" //Include the STM32F4xx header file(Standard peripheral library)
 #include "stm32f411xe.h"//Include the STM32F411 header file(Standard peripheral library)
-#include "uart.h"
+#include "uart.h"//Include the UART header file
 
 
 #define GPIOCEN				(1UL << 2) //0b 0000 0000 0000 0000 0000 0000 0000 0100
@@ -20,6 +20,7 @@ char key;
 int main(void){
 
   uart2_rxtx_init();
+  
   /*1. Enable clock access to GPIOC*/
   RCC ->AHB1ENR |= GPIOCEN;
   /*2. Set PC13 as output pin*/

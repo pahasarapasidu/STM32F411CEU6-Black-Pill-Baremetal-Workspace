@@ -1,4 +1,5 @@
-/*STM32F411CEU6-WeAct Blackphill UART_TX Configuration */
+/*STM32F411CEU6-WeAct Blackphill UART_RXTX Configuration 
+  For UART2 (PA2, PA3)*/
 
 #include "uart.h"
 

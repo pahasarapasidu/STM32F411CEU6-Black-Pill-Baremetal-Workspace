@@ -6,13 +6,19 @@
   *
   *          This file contains:
   *           - uart2_init_config
-  *           - compute_uart_bd
   *           - uart2_baudrate_config
   *           - uart2_write
+  *           - uart2_read
   *           - uart2_tx_init
+  *           - uart2_rxtx_init
   *           - __io_putchar
+  *           - compute_uart_bd
   *
   ******************************************************************************
+  *@attention All functions are tested with WeAct STM32F411CEU6 Blackpill board
+              Function definitions are in uart.c file
+  ******************************************************************************
+
   */
 
 
