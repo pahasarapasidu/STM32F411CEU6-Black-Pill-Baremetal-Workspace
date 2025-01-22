@@ -35,10 +35,10 @@ int main(void){
     key = uart2_read();
     if (key == '1')
     {
-      GPIOC ->ODR |= LED_PIN; // Set PC13 LOW(Turn on user LED for WeactStudio blackphill)
+      GPIOC ->ODR &= ~LED_PIN; // Set PC13 LOW(Turn on user LED for WeactStudio blackphill)
     }
     else{
-      GPIOC ->ODR &= ~LED_PIN; // Set PC13 HIGH(Turn off user LED for WeactStudio blackphill)
+      GPIOC ->ODR |= LED_PIN; // Set PC13 HIGH(Turn off user LED for WeactStudio blackphill)
     }
     
 

@@ -17,7 +17,7 @@ int main(void){
 
   while (1)
   {
-    printf("Hello from STM32F4......\n\r");
+    printf("Hello from STM32F411CEU6 Blackpill....\n\r");
 
     for(volatile int i = 0; i < 1000000; i++);
   }
