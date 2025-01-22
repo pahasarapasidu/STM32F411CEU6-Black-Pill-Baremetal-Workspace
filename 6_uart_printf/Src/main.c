@@ -41,7 +41,7 @@ int main(void){
   {
     printf("Hello from STM32F4......\n\r");
 
-    for(volatile int i = 0; i < 1000000; i++);
+    for(volatile int i = 0; i < 100000; i++);
   }
     
 }
