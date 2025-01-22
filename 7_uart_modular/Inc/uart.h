@@ -2,7 +2,7 @@
   ******************************************************************************
   * @file    uart.h
   * @author  pahasarapasidu
-  * @brief   STM32F411CEU6-WeAct Blackphill UART_TX Configuration 
+  * @brief   STM32F411CEU6-WeAct Blackpill UART_TX Configuration 
   *
   *          This file contains:
   *           - uart2_init_config

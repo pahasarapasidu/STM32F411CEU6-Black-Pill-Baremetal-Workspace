@@ -1,4 +1,4 @@
-/*STM32F411CEU6-WeAct Blackphill UART_TX Configuration */
+/*STM32F411CEU6-WeAct Blackhill UART_TX Configuration */
 
 #include "uart.h"
 
@@ -20,7 +20,7 @@ static uint16_t compute_uart_bd(uint32_t PeriphClk, uint32_t Baudrate);
 
 void uart2_write(int ch);
 
-int __io_putchar(int ch)
+int __io_putchar(int ch) // This is the crucial function that allows printf to work
 {
   uart2_write(ch);
   return ch;
