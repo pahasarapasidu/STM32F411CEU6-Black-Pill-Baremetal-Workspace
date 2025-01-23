@@ -1,4 +1,4 @@
-/*STM32F411CEU6-WeAct Blackpill UART_RXTX Configuration   
+/*STM32F411CEU6-WeAct Blackpill ADC Configuration   
   BareMetal Programming with STM Header Files(https://github.com/STMicroelectronics/STM32CubeF4)
  */
 
@@ -15,7 +15,7 @@ int main(void){
 
   uart2_rxtx_init();
   pa1_adc_init();
-  start_conversion();
+
   
   while (1)
   {
