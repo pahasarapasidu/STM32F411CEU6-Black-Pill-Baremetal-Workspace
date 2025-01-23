@@ -1,4 +1,4 @@
-/*STM32F411CEU6-WeAct Blackpill ADC Configuration   
+/*STM32F411CEU6-WeAct Blackpill ADC Configuration (Single mode)
   BareMetal Programming with STM Header Files(https://github.com/STMicroelectronics/STM32CubeF4)
  */
 
@@ -19,10 +19,10 @@ int main(void){
   
   while (1)
   {
-	start_conversion();
+    start_conversion();
 
-	sensor_value = adc_read();
-	printf("ADC Value: %d\n\r", (int)sensor_value);
+    sensor_value = adc_read();
+    printf("ADC Value: %d\n\r", (int)sensor_value);
 
     for(volatile int i = 0; i < 100000; i++);
 
