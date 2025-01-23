@@ -9,3 +9,42 @@
 #include "uart.h"//Include the UART header file
 
 
+#define GPIOCEN				(1UL << 2) //0b 0000 0000 0000 0000 0000 0000 0000 0100
+
+#define PIN13               (1UL << 13)
+#define LED_PIN             PIN13
+
+char key;
+
+
+int main(void){
+
+  uart2_rxtx_init();
+
+  /*1. Enable clock access to GPIOC*/
+  RCC ->AHB1ENR |= GPIOCEN;
+  /*2. Set PC13 as output pin*/
+  GPIOC ->MODER|= (1UL << 26); // Set bit 26 to 1
+  GPIOC ->MODER &=~(1UL << 27); // Set bit 27 to 0
+
+
+
+  while (1)
+  {
+
+
+    key = uart2_read();
+    if (key == '1')
+    {
+      GPIOC ->ODR &= ~LED_PIN; // Set PC13 LOW(Turn on user LED for WeactStudio blackphill)
+    }
+    else{
+      GPIOC ->ODR |= LED_PIN; // Set PC13 HIGH(Turn off user LED for WeactStudio blackphill)
+    }
+
+
+
+
+  }
+
+}
