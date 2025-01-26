@@ -1,4 +1,4 @@
-/*STM32F411CEU6-WeAct Blackpill ADC Configuration (Single mode)
+/*STM32F411CEU6-WeAct Blackpill Delay Configuration (Using Systick Timer)
   BareMetal Programming with STM Header Files(https://github.com/STMicroelectronics/STM32CubeF4)
  */
 
@@ -8,24 +8,32 @@
 #include "stm32f411xe.h"//Include the STM32F411 header file(Standard peripheral library)
 #include "uart.h"//Include the UART header file
 #include "adc.h"//Include the ADC header file
+#include "systick.h"//Include the Systick header file
 
-uint32_t sensor_value;
+
+#define GPIOCEN				(1UL << 2) //0b 0000 0000 0000 0000 0000 0000 0000 0100
+
+#define PIN13               (1UL << 13)
+#define LED_PIN             PIN13
 
 int main(void){
 
   uart2_rxtx_init();
-  pa1_adc_init();
-  start_conversion();
+
+  /*1. Enable clock access to GPIOC*/
+  RCC ->AHB1ENR |= GPIOCEN;
+  /*2. Set PC13 as output pin*/
+  GPIOC ->MODER|= (1UL << 26); // Set bit 26 to 1
+  GPIOC ->MODER &=~(1UL << 27); // Set bit 27 to 0
+
 
   
   while (1)
   {
     
-
-    sensor_value = adc_read();
-    printf("ADC Value: %d\n\r", (int)sensor_value);
-
-    for(volatile int i = 0; i < 100000; i++);
+    printf("Second passed !! \n\r");
+    GPIOC ->ODR ^=LED_PIN; // Toggle PC13
+    systickDelayMs(1000);
 
   }
 
