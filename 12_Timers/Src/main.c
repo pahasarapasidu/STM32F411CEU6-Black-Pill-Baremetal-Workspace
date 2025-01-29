@@ -9,6 +9,8 @@
 #include "uart.h"//Include the UART header file
 #include "adc.h"//Include the ADC header file
 #include "systick.h"//Include the Systick header file
+#include "tim.h"//Include the Timer header file
+
 
 
 #define GPIOCEN				(1UL << 2) //0b 0000 0000 0000 0000 0000 0000 0000 0100
@@ -19,6 +21,7 @@
 int main(void){
 
   uart2_rxtx_init();
+  tim2_1hz_init();
 
   /*1. Enable clock access to GPIOC*/
   RCC ->AHB1ENR |= GPIOCEN;
@@ -30,10 +33,14 @@ int main(void){
   
   while (1)
   {
+    while (!(TIM2 ->SR & SR_UIF)){}
+     
+    /*Clear UIF*/
+    TIM2 ->SR &= ~SR_UIF;
     
     printf("Second passed !! \n\r");
     GPIOC ->ODR ^=LED_PIN; // Toggle PC13
-    systickDelayMs(1000);
+    
 
   }
 
