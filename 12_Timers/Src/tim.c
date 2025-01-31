@@ -15,6 +15,10 @@ void tim2_1hz_init(void)
     /*Set auto-reload value*/ 
     TIM2 ->ARR = 10000 - 1; //10000/10 000 = 1Hz
 
+    /*Clear counter*/
+    TIM2 ->CNT = 0;
+
+
     /*Enable timer*/
     TIM2 ->CR1 |= CR1_CEN;
 
