@@ -24,18 +24,17 @@ int timestamp = 0;
 
 int main(void){
 
-	pa5_af_mode();
-  pa6_af_mode();
+  pa5_af_mode();
+  tim2_output_compare();
 
-	tim2_output_compare();
+  pa6_af_mode();
   tim3_input_capture();
 
   
   while (1)
   {
     /*Wait until edge is capture*/
-    while(!(TIM3 ->SR & SR_CC1IF))
-
+    while(!(TIM3 ->SR & SR_CC1IF));
     /*Read capture Value*/
     timestamp = TIM3 ->CCR1;
 

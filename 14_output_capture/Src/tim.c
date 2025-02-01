@@ -34,6 +34,7 @@ void tim2_1hz_init(void)
 
 void tim2_output_compare(void)
 {
+
     /*Enable Clock access to tim2*/
     RCC ->APB1ENR |= TIM2EN;
 
@@ -60,11 +61,12 @@ void tim2_output_compare(void)
 
 void tim3_input_capture(void)
 {
+
     /*Enable Clock access to tim3*/
     RCC ->APB1ENR |= TIM3EN;
 
     /*Set prescaler value*/
-    TIM2 ->PSC = 16000  - 1; //16 000 000/16 000 = 10 00
+    TIM3 ->PSC = 16000 - 1; //16 000 000/16 000 = 1 000
 
     /*Set CH1 to input capture*/
     TIM3 ->CCMR1 |= CCEN_CC1S;
