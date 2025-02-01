@@ -18,15 +18,27 @@
 #define PIN13               (1UL << 13)
 #define LED_PIN             PIN13
 
+int timestamp = 0;
+
+/*Set up : Connect a jumper wire from PA5 to PA6*/
+
 int main(void){
 
 	pa5_af_mode();
+  pa6_af_mode();
+
 	tim2_output_compare();
+  tim3_input_capture();
 
   
   while (1)
   {
-    
+    /*Wait until edge is capture*/
+    while(!(TIM3 ->SR & SR_CC1IF))
+
+    /*Read capture Value*/
+    timestamp = TIM3 ->CCR1;
+
   }
 
 }

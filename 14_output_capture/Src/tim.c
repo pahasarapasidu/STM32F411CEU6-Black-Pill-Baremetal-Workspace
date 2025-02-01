@@ -10,6 +10,7 @@
 
 #define AFR5_TIM            (1UL<<20)
 #define AFR6_TIM            (1UL<<25)
+#define CCEN_CC1S           (1UL<<0) 
 
 
 void tim2_1hz_init(void)
@@ -65,29 +66,14 @@ void tim3_input_capture(void)
     /*Set prescaler value*/
     TIM2 ->PSC = 16000  - 1; //16 000 000/16 000 = 10 00
 
-    /*Set CH1 to capture at every edge*/
-    
+    /*Set CH1 to input capture*/
+    TIM3 ->CCMR1 |= CCEN_CC1S;
+
     /*Set CH1 to capture at rising edge*/
+    TIM3 ->CCER = CCER_CC1E;
+
     /*Enable tim3*/
-
-
-    /*Set auto-reload value*/
-    TIM2 ->ARR = 10000 - 1; //10000/10 000 = 1Hz
-
-    /*Set output compare toggle mode*/
-    TIM2 ->CCMR1 = OC_TOGGLE;
-
-    /*Enable tim2 ch1 in compare mode*/
-    TIM2 ->CCER |= CCER_CC1E;
-
-    /*Clear counter*/
-    TIM2 ->CNT = 0;
-
-
-    /*Enable timer*/
-    TIM2 ->CR1 |= CR1_CEN;
-
-    
+    TIM3 ->CR1 |= CR1_CEN;    
 
 }
 
