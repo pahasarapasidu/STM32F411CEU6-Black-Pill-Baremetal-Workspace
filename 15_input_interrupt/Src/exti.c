@@ -4,14 +4,15 @@
 
 void pb13_exti_init(void)
 {
-    /*Dsable global interrupt*/
+    /*Disable global interrupt*/
     __disable_irq();
 
     /*Enable clock access for GPIOB */
     RCC->AHB1ENR |= GPIOBEN;
     
     /*Enable clock access to SYSCFG*/
-    /*Select PORTA for EXTI13*/
+    
+    /*Select PORTB for EXTI13*/
     /*Unmask EXTI13*/
     /*Select falling edge trigger*/
     /*Enable EXTI line in NVIC*/
