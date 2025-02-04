@@ -19,9 +19,11 @@ void pb13_exti_init(void)
     RCC ->APB1ENR |= SYSCFGEN;
 
     /*Select PORTB for EXTI13*/
-    SYSCFG ->EXTICR[3] |= (1ul << 4);
+    SYSCFG ->EXTICR[3] |= (1UL << 4);
 
     /*Unmask EXTI13*/
+    EXTI ->IMR |= (1UL << 13);
+
     /*Select falling edge trigger*/
     /*Enable EXTI line in NVIC*/
     /*Enable global interrupt*/
