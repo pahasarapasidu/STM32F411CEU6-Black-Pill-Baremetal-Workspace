@@ -29,6 +29,7 @@ void pb13_exti_init(void)
 
     /*Enable EXTI line in NVIC*/
     NVIC_EnableIRQ(EXTI15_10_IRQn);
+    
     /*Enable global interrupt*/
     __enable_irq();
 }

@@ -8,5 +8,6 @@
 #include "stm32f4xx.h" //Include the STM32F4xx header file(Standard peripheral library)
 #include "stm32f411xe.h"//Include the STM32F411 header file(Standard peripheral library)
 
+void pb13_exti_init(void);
 
 #endif /* EXTI_H_ */
