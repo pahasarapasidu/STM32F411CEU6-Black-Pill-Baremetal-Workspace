@@ -25,7 +25,10 @@ void pb13_exti_init(void)
     EXTI ->IMR |= (1UL << 13);
 
     /*Select falling edge trigger*/
+    EXTI ->FTSR |= (1UL << 13);
+
     /*Enable EXTI line in NVIC*/
+    NVIC_EnableIRQ(EXTI15_10_IRQn);
     /*Enable global interrupt*/
     __enable_irq();
 }
