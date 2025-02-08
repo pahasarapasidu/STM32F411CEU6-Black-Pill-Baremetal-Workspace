@@ -133,9 +133,6 @@ void uart2_write(int ch)
   /*Write to transmit data register*/ 
   USART2 ->DR = (ch & 0xFF);
 
-
-
-
 }
 
 static void uart_set_baudrate(USART_TypeDef *USARTx, uint32_t PeriphClk, uint32_t BaudRate)
