@@ -1,3 +1,6 @@
+/*STM32F411CEU6-WeAct Blackphill TIM2 Configuration 
+  */
+
 #include "stm32f4xx.h" //Include the STM32F4xx header file(Standard peripheral library)
 #include "stm32f411xe.h"//Include the STM32F411 header file(Standard peripheral library)
 
