@@ -1,4 +1,4 @@
-/*STM32F411CEU6-WeAct Blackpill ADC Configuration (Single mode)
+/*STM32F411CEU6-WeAct Blackpill ADC Configuration (Single mode) with continuous conversion. 
   BareMetal Programming with STM Header Files(https://github.com/STMicroelectronics/STM32CubeF4)
  */
 
