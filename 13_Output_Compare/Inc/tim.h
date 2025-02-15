@@ -5,13 +5,20 @@
   * @brief   STM32F411CEU6-WeAct Blackphill ADC Configuration 
   *
   *          This file contains:
-  *           - TIM2 1Hz configuration
+  *          **TIM2 1Hz configuration**
+  *           - PA5 AF mode
+  *           - TIM2 1Hz initialization
+  *          **TIM2 Output Compare configuration**
+  *           - PA5 AF mode
+  *           - TIM2 Output Compare initialization
+  * 
+  *  
   *          
   *           
   *
   ******************************************************************************
   *@attention All functions are tested with WeAct STM32F411CEU6 Blackpill board
-              Function definitions are in adc.c file
+              Function definitions are in tim.c file
   ******************************************************************************
 
   */
