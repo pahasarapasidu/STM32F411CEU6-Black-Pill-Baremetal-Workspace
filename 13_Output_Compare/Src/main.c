@@ -1,4 +1,4 @@
-/*STM32F411CEU6-WeAct Blackpill Delay Configuration (Using Systick Timer)
+/*STM32F411CEU6-WeAct Blackpill Toggling PC13 LED every 1 second using TIM2
   BareMetal Programming with STM Header Files(https://github.com/STMicroelectronics/STM32CubeF4)
  */
 
