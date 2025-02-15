@@ -11,6 +11,9 @@
   *          **TIM2 Output Compare configuration**
   *           - PA5 AF mode
   *           - TIM2 Output Compare initialization
+  *         **TIM3 Input Capture configuration**
+  *           - PA6 AF mode
+  *           - TIM3 Input Capture initialization
   * 
   *  
   *          
