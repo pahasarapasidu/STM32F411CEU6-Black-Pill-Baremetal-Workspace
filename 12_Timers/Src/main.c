@@ -1,4 +1,4 @@
-/*STM32F411CEU6-WeAct Blackpill Delay Configuration (Using Systick Timer)
+/*STM32F411CEU6-WeAct Blackpill LED Toggle with Timer 
   BareMetal Programming with STM Header Files(https://github.com/STMicroelectronics/STM32CubeF4)
  */
 
