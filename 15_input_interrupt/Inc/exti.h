@@ -10,7 +10,7 @@
   *
   ******************************************************************************
   *@attention All functions are tested with WeAct STM32F411CEU6 Blackpill board
-              Function definitions are in adc.c file
+              Function definitions are in exti.c file
   ******************************************************************************
 
   */
