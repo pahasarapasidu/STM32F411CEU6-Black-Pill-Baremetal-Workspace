@@ -1,3 +1,19 @@
+/**
+  ******************************************************************************
+  * @file    adc.h
+  * @author  pahasarapasidu
+  * @brief   STM32F411CEU6-WeAct Blackphill ADC Configuration 
+  *
+  *          This file contains:
+  *           - pb13_exti_init
+  *           
+  *
+  ******************************************************************************
+  *@attention All functions are tested with WeAct STM32F411CEU6 Blackpill board
+              Function definitions are in adc.c file
+  ******************************************************************************
+
+  */
 
 #ifndef EXTI_H_
 #define EXTI_H_
