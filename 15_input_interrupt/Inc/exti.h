@@ -1,6 +1,6 @@
 /**
   ******************************************************************************
-  * @file    adc.h
+  * @file    exti.h
   * @author  pahasarapasidu
   * @brief   STM32F411CEU6-WeAct Blackphill ADC Configuration 
   *
