@@ -93,6 +93,6 @@ openocd -f interface/stlink.cfg -f target/stm32f4x.cfg \
 
 _All examples target the STM32F411CEU6 on the “Black Pill” board, illustrating direct register access and minimal runtime overhead for educational and prototyping purposes._
 
-
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 
